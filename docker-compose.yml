@@ -13,11 +13,9 @@ services:
             POSTGRES_PASSWORD: datatitanic
             POSTGRES_USER: root
             POSTGRES_DB: db
-
     postgres:
         image: postgres
         environment:
             POSTGRES_PASSWORD: datatitanic
             POSTGRES_USER: root
             POSTGRES_DB: db
-        restart: always
