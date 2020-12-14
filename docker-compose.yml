@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+    flaskapp:
+        build: .
+        image: titanic-flask:latest
+        ports:
+            - "5000:5000"
+        links:
+            - "postgres:db"
+        depends_on:
+            - postgres
+        environment:
+            POSTGRES_PASSWORD: datatitanic
+            POSTGRES_USER: root
+            POSTGRES_DB: db
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_PASSWORD: datatitanic
+            POSTGRES_USER: root
+            POSTGRES_DB: db
+        restart: always
